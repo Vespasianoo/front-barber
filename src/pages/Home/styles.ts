@@ -1,7 +1,9 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  width: 100%;
+  height: 100%;
+  display: flex;
+  /* width: 100%;
   max-width: 1280px;
   margin: 58px auto 0 auto;
   > header {
@@ -42,6 +44,6 @@ export const Container = styled.div`
         text-align: justify;
         font-size: 24px;
       }
-    }
-  }
+    } */
+  /* } */
 `

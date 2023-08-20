@@ -1,13 +1,31 @@
+import { I } from "../../assets/icons"
+import logo from "../../assets/img/logotipe.png"
+import { Perfil } from "../Perfil"
 import * as S from "./styles"
 
 export function MenuBar() {
   return (
     <S.Container>
-      <h1>link 1</h1>
-      <h1>link 2</h1>
-      <h1>link 3</h1>
-      <h1>link 4</h1>
-      <h1>link 5</h1>
+      <S.TopSide>
+        <a href="" id="logo">
+          <img src={logo} alt="" />
+          <span>Invictus Barbearia</span>
+        </a>
+
+        <S.MenuLink to="/home" className="active">
+          <I.Home />
+          <span>Pagina inicial</span>
+        </S.MenuLink>
+
+        <S.MenuLink to="/home">
+          <I.CalendarPlus />
+          <span>Novo agendamento</span>
+        </S.MenuLink>
+      </S.TopSide>
+
+      <S.BottonSide>
+        <Perfil />
+      </S.BottonSide>
     </S.Container>
   )
 }

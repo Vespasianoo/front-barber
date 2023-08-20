@@ -8,7 +8,8 @@ export default {
     textColor1: "#BEBEBF",
     textColor2: "#D2D2D2",
     textColor3: "#A9A9A9",
-    textColor4: "#F2F4F7"
+    textColor4: "#F2F4F7",
+    white: "#ffffff"
   }
 }
 

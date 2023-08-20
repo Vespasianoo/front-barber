@@ -6,8 +6,8 @@ import {
 } from "react-router-dom"
 
 import { Home } from "../pages/Home"
-import { Layout } from "../components/Layout"
-import { Escolha } from "../components/Escolha"
+// import { Layout } from "../components/Layout"
+// import { Escolha } from "../components/Escolha"
 
 export const AppRouter = () => {
   const router = createBrowserRouter(
@@ -15,9 +15,9 @@ export const AppRouter = () => {
       <>
         <Route index path="/" element={<Home />} />
 
-        <Route path="/home" element={<Layout />}>
+        {/* <Route path="/home" element={<Layout />}>
           <Route index path="/home" element={<Escolha />} />
-        </Route>
+        </Route> */}
       </>
     )
   )
