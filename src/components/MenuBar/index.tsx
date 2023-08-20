@@ -7,17 +7,17 @@ export function MenuBar() {
   return (
     <S.Container>
       <S.TopSide>
-        <a href="" id="logo">
+        <a href="/" id="logo">
           <img src={logo} alt="" />
           <span>Invictus Barbearia</span>
         </a>
 
-        <S.MenuLink to="/home" className="active">
+        <S.MenuLink to="/home">
           <I.Home />
           <span>Pagina inicial</span>
         </S.MenuLink>
 
-        <S.MenuLink to="/home">
+        <S.MenuLink to="/new">
           <I.CalendarPlus />
           <span>Novo agendamento</span>
         </S.MenuLink>

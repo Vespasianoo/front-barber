@@ -1,13 +1,12 @@
+import { Link } from "react-router-dom"
 import * as S from "./styles"
-import { MenuBar } from "../../components/MenuBar"
-
 export function Home() {
   return (
     <S.Container>
-      <MenuBar />
-      <p>
-        fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-      </p>
+      <h1>Minha landiidiuegruih</h1>
+      <Link to="/home">Login</Link>
     </S.Container>
   )
 }
+
+// TODO - por enquanto <Link>
