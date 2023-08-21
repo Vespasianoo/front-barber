@@ -27,35 +27,6 @@ export const TopSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  > #logo {
-    margin-bottom: 26px;
-    > img {
-      width: 28px;
-    }
-    > span {
-      display: none;
-    }
-  }
-  @media (min-width: 1024px) {
-    > #logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 26px;
-
-      > img {
-        width: min-content;
-      }
-      > span {
-        display: initial;
-        color: ${({ theme }) => theme.colors.white};
-        /* font-family: Titillium Web; */
-        font-size: 18px;
-        margin-top: 8px;
-      }
-    }
-  }
 `
 
 export const MenuLink = styled(NavLink)`
