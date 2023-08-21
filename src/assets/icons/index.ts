@@ -1,11 +1,13 @@
-import { Facebook } from "./Facebook"
-import { Twitter } from "./Twitter"
-import { Outr } from "./Outr"
-import { Home, CalendarPlus } from "lucide-react"
+import { Home, CalendarPlus, Instagram, Facebook, Linkedin } from "lucide-react"
+import { Google } from "./Google"
+
 export const I = {
   Home,
   CalendarPlus,
   Facebook,
-  Twitter,
-  Outr
+  Instagram,
+  Linkedin,
+  Google
 }
+
+// TODO - pegar svg do google para colocar no button homepage
