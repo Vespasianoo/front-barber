@@ -9,8 +9,11 @@ export const Container = styled.div`
   > * {
     font-family: 'Roboto',sans-serif;
   }
-
+  
   > header {
+    position: static;
+    height: 120px;
+    margin-bottom: 68px;
     > h2 {
       text-align: center;
       color: ${({theme})=> theme.colors.textColor1};
@@ -26,11 +29,6 @@ export const Container = styled.div`
       line-height: 24px; 
       margin-top: 24px;
     }
-  }
-  > main {
-    width: 856px;
-    margin-top: 68px;
-
     > div {
       display: flex;
       align-items: center;
@@ -39,7 +37,8 @@ export const Container = styled.div`
       background: #272727;
       height: 48px;
       border-radius: 4px;
-
+      margin-top:12px;
+  
       &:focus-within{
         outline: auto;
       }
@@ -48,14 +47,6 @@ export const Container = styled.div`
         height: 100%;
         outline: none;
       }
-    }
-
-    > ul {
-      margin-top: 52px;
-
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
     }
   }
 `

@@ -7,7 +7,7 @@ import {
 
 import { Home } from "../pages/Home"
 import { Layout } from "../components/Layout"
-import {  ChooseServices} from "../pages/ChooseServices"
+import { ChooseServices } from "../pages/ChooseServices"
 
 export const AppRouter = () => {
   const router = createBrowserRouter(
