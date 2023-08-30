@@ -15,13 +15,13 @@ export const AppRouter = () => {
       <>
         <Route index path="/" element={<Home />} />
 
-        <Route path="/home" element={<Layout />}>
-          <Route index path="/home" element={<h1>Você não agendamentos</h1>} />
+        <Route path="/app" element={<Layout />}>
+          <Route index path="/app" element={<h1>Você não agendamentos</h1>} />
+          <Route path="/app/new" element={<ChooseServices />} />
         </Route>
 
-        <Route path="/new" element={<Layout />}>
-          <Route index path="/new" element={<ChooseServices />} />
-        </Route>
+        {/* <Route path="/new" element={<Layout />}>
+        </Route> */}
       </>
     )
   )

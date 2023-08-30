@@ -27,6 +27,7 @@ export const TopSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 12px;
 `
 
 export const MenuLink = styled(NavLink)`
@@ -39,10 +40,6 @@ export const MenuLink = styled(NavLink)`
   gap: 12px;
 
   border-radius: 6px; // ou 4px
-
-  &:last-child {
-    margin-top: 15px;
-  }
 
   > span {
     display: none;
