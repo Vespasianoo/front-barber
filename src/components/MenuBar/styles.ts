@@ -74,6 +74,8 @@ export const MenuLink = styled(NavLink)`
 `
 
 export const BottonSide = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding-top: 12px;
   border-top: 1px solid ${({ theme }) => theme.colors.textColor3};

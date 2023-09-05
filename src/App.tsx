@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components"
-import GlobalStyles from "./styles/GlobalStyles"
-import dark from "./styles/theme/dark"
 import { AppRouter } from "./router"
+import dark from "./styles/theme/dark"
+import GlobalStyles from "./styles/GlobalStyles"
 
 export function App() {
   return (

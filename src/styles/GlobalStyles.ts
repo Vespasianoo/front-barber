@@ -10,13 +10,14 @@ export default createGlobalStyle`
     border: none;
     text-decoration: none;
   }
-
+  border,
   body *,
   button,
   input {
     /* font-family: "Inter", sans-serif; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     color: ${({ theme }) => theme.colors.textColor1};
   }
 
