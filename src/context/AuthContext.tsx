@@ -2,7 +2,7 @@ import { ReactNode, createContext, useState, useEffect } from "react"
 import { useCookies } from "react-cookie"
 import decode from "jwt-decode"
 
-interface authProps {
+interface AuthProps {
   children: ReactNode
 }
 
@@ -12,16 +12,14 @@ interface User {
   avatarUrl: string
 }
 
-interface contextProps extends User {
+interface ContextProps extends User {
   token: string | null
   singOut: () => void
 }
 
-// verificar padrao maiuscula
+export const AuthContext = createContext<ContextProps>({} as ContextProps)
 
-export const AuthContext = createContext<contextProps>({} as contextProps)
-
-export function AuthProvider({ children }: authProps) {
+export function AuthProvider({ children }: AuthProps) {
   const [cookies] = useCookies(["token"])
   const token = cookies["token"]
 
