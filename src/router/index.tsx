@@ -1,27 +1,39 @@
+import { useContext } from "react"
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  redirect,
   Route,
   RouterProvider
 } from "react-router-dom"
 
-import { Home } from "../pages/Home"
 import { Layout } from "../components/Layout"
+import { Home } from "../pages/Home"
 import { ChooseServices } from "../pages/ChooseServices"
 
+import { AuthContext } from "../context/AuthContext"
+
 export const AppRouter = () => {
+  const { token } = useContext(AuthContext)
+
+  const noToken = () => {
+    if (!token) return redirect("/")
+    return null
+  }
+  const isToken = () => {
+    if (token) return redirect("/app")
+    return null
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route index path="/" element={<Home />} />
+        <Route index path="/" element={<Home />} loader={isToken} />
 
-        <Route path="/app" element={<Layout />}>
+        <Route path="/app" element={<Layout />} loader={noToken}>
           <Route index path="/app" element={<h1>Você não agendamentos</h1>} />
           <Route path="/app/new" element={<ChooseServices />} />
         </Route>
-
-        {/* <Route path="/new" element={<Layout />}>
-        </Route> */}
       </>
     )
   )

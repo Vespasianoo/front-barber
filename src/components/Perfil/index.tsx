@@ -1,14 +1,19 @@
+import { useContext } from "react"
+import { AuthContext } from "../../context/AuthContext"
+
 import { MoreHorizontal } from "lucide-react"
-import avatarImg from "../../assets/img/lek.jpg"
+
 import * as S from "./styles"
 
 export function Perfil() {
+  const { avatarUrl, name, email } = useContext(AuthContext)
+
   return (
     <S.TriggerContainer>
-      <img src={avatarImg} alt="Avatar de fulano" />
+      {avatarUrl && <img src={avatarUrl} />}
       <div>
-        <span>username</span>
-        <span>muleke@e-grilinho.com</span>
+        <span>{name}</span>
+        <span>{email}</span>
       </div>
       <MoreHorizontal />
     </S.TriggerContainer>

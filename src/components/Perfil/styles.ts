@@ -44,6 +44,9 @@ export const TriggerContainer = styled(Trigger)`
       > span:last-child {
         color: ${({ theme }) => theme.colors.textColor1};
         font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     svg {
