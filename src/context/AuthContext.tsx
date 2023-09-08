@@ -55,4 +55,4 @@ export function AuthProvider({ children }: AuthProps) {
     </AuthContext.Provider>
   )
 }
-// verificar se existe cookie pra enviar
+// verificar se existe cookie ou se é valido pra enviar

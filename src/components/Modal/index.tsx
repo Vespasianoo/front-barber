@@ -7,7 +7,7 @@ import * as S from "./styles"
 
 export function Modal() {
   const { singOut } = useContext(AuthContext)
-
+  // usar outro coisa e n um modal
   return (
     <S.PortalContainer>
       <S.ContentMain>
