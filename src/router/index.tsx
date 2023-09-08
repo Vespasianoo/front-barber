@@ -12,6 +12,7 @@ import { Home } from "../pages/Home"
 import { ChooseServices } from "../pages/ChooseServices"
 
 import { AuthContext } from "../context/AuthContext"
+import { Dash } from "../pages/Dash"
 
 export const AppRouter = () => {
   const { token } = useContext(AuthContext)
@@ -33,7 +34,7 @@ export const AppRouter = () => {
         <Route index path="/" element={<Home />} loader={isToken} />
 
         <Route path="/app" element={<Layout />} loader={noToken}>
-          <Route index path="/app" element={<h1>Você não agendamentos</h1>} />
+          <Route index path="/app" element={<Dash />} />
           <Route path="/app/new" element={<ChooseServices />} />
         </Route>
       </>
