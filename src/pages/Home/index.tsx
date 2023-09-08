@@ -14,7 +14,7 @@ export function Home() {
     try {
       const response = await signInWithPopup(auth, provider)
 
-      const userData = await api.post("register", {
+      const userData = await api.post("/register", {
         name: response.user.displayName,
         email: response.user.email,
         avatarUrl: response.user.photoURL
