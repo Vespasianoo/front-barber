@@ -10,7 +10,6 @@ export default createGlobalStyle`
     border: none;
     text-decoration: none;
   }
-  border,
   body *,
   button,
   input {
