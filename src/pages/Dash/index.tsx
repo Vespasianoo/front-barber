@@ -1,26 +1,31 @@
 import { useContext, useEffect, useState } from "react"
-import { api } from "../../services/api"
+
 import { AuthContext } from "../../context/AuthContext"
+import { api } from "../../services/api"
+
+import { CardScheduling } from "../../components/CardScheduling"
+
+import imgDash from "../../assets/img/img-dsh.svg"
 import * as S from "./styles"
 
-interface Agendamento {
-  dia?: string
-  horario?: string
-  cut?: {
+interface SchedulingProps {
+  id: string
+  dia: string
+  horario: string
+  cut: {
     id: string
     name: string
     price: string
     time: number
   }
-  barber?: {
+  barber: {
     name: string
   }
-  message?: string
 }
 
 export function Dash() {
   const [scheduling, setScheduling] = useState<
-    Agendamento[] | { message: string }
+    SchedulingProps[] | { message: string }
   >([])
 
   const { token } = useContext(AuthContext)
@@ -33,9 +38,7 @@ export function Dash() {
             Authorization: `Bearer ${token}`
           }
         })
-        if (response.data) {
-          setScheduling(response.data)
-        }
+        setScheduling(response.data)
       } catch (error) {
         console.error("Erro ao buscar agendamentos:", error)
       }
@@ -47,15 +50,26 @@ export function Dash() {
   return (
     <S.Container>
       {Array.isArray(scheduling) ? (
-        scheduling.map((item, index) => (
-          <h1 key={index}>{item.barber?.name}</h1>
+        scheduling.map(item => (
+          <CardScheduling
+            key={item.id}
+            id={item.id}
+            dia={item.dia}
+            cut={item.cut}
+            horario={item.horario}
+            barber={item.barber}
+          />
         ))
-      ) : // TODO - fazer card para mostrar o agendamento ou usar outra maneira
-      scheduling.message ? (
-        <span>{scheduling.message}</span>
       ) : (
-        <span>alo</span>
+        <S.Content>
+          <img src={imgDash} alt="" />
+          <span>{scheduling.message}</span>
+          <S.Button to="/app/new">Agende agora</S.Button>
+        </S.Content>
       )}
     </S.Container>
   )
 }
+
+// TODO - trocar nome da page do component para o nome completo ou um nome melhor
+// TODO - fazer card para mostrar o agendamento ou usar outra maneira

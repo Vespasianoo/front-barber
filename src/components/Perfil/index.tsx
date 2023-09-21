@@ -19,3 +19,4 @@ export function Perfil() {
     </S.TriggerContainer>
   )
 }
+// tirar o email do token e para isso provavelmente ver o retorno do google e pegar o id e ver a aula nlw

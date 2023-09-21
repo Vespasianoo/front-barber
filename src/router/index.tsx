@@ -21,6 +21,9 @@ export const AppRouter = () => {
     if (!token) return redirect("/")
     return null
   }
+
+ 
+  
   const isToken = () => {
     if (token) {
       return redirect("/app")
