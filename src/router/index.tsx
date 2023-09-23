@@ -19,15 +19,13 @@ export const AppRouter = () => {
 
   const noToken = () => {
     if (!token) return redirect("/")
+
     return null
   }
 
- 
-  
   const isToken = () => {
-    if (token) {
-      return redirect("/app")
-    }
+    if (token) return redirect("/app")
+
     return null
   }
 
