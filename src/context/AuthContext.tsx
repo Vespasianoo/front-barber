@@ -26,13 +26,22 @@ export function AuthProvider({ children }: AuthProps) {
   const [user, setUser] = useState<User>({} as User)
 
   useEffect(() => {
-    if (token) {
-      const user: User = decode(token)
-      setUser({
-        name: user.name,
-        email: user.email,
-        avatarUrl: user.avatarUrl
-      })
+    try {
+      if (token) {
+        const user: User = decode(token)
+
+        if (user) {
+          setUser({
+            name: user.name,
+            email: user.email,
+            avatarUrl: user.avatarUrl
+          })
+        } else {
+          singOut()
+        }
+      }
+    } catch (error) {
+      singOut()
     }
   }, [token])
 

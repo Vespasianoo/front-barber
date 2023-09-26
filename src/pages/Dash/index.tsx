@@ -28,7 +28,7 @@ export function Dash() {
     SchedulingProps[] | { message: string }
   >([])
 
-  const { token } = useContext(AuthContext)
+  const { token, singOut } = useContext(AuthContext)
 
   useEffect(() => {
     const getAgendamentos = async () => {
@@ -39,8 +39,12 @@ export function Dash() {
           }
         })
         setScheduling(response.data)
-      } catch (error) {
+      } catch (error: any) {
         console.error("Erro ao buscar agendamentos:", error)
+        if (error.response.data.statusCode === 401) {
+          alert("Você não está autenticado")
+          return singOut()
+        }
       }
     }
 
