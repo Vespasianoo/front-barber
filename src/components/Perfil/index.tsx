@@ -20,3 +20,4 @@ export function Perfil() {
   )
 }
 // tirar o email do token e para isso provavelmente ver o retorno do google e pegar o id e ver a aula nlw
+// TODO - fazer logica para dimunuir o nome do user deixar apena dois nomes
